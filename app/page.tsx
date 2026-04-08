@@ -25,27 +25,41 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col h-screen bg-slate-900 text-white">
-      {/* Encabezado */}
-      <header className="flex-none px-6 py-4 border-b border-slate-700">
-        <p className="text-xs text-slate-500 mb-1">De: Kamila García</p>
-        <h1 className="text-2xl font-bold tracking-tight text-white">
+    <main className="flex flex-col h-screen bg-slate-900 text-white overflow-hidden">
+      {/* Encabezado — más compacto en móvil */}
+      <header className="flex-none px-4 py-2.5 md:px-6 md:py-4 border-b border-slate-700">
+        <p className="text-[10px] md:text-xs text-slate-500 mb-0.5">De: Kamila García</p>
+        <h1 className="text-lg md:text-2xl font-bold tracking-tight text-white leading-tight">
           Visualizador de Pitch, Roll y Yaw
         </h1>
-        <p className="text-slate-400 text-sm mt-0.5">
+        <p className="hidden md:block text-slate-400 text-sm mt-0.5">
           Manipula los tres ejes de rotación de un avión en tiempo real
         </p>
       </header>
 
-      {/* Contenido principal */}
-      <div className="flex flex-1 min-h-0 gap-4 p-4">
+      {/* Contenido principal:
+          – Móvil:    columna  (escena arriba, controles abajo)
+          – Desktop:  fila     (escena izquierda, controles derecha) */}
+      <div className="flex flex-col md:flex-row flex-1 min-h-0 gap-3 md:gap-4 p-3 md:p-4">
+
         {/* Escena 3D */}
-        <div className="flex-1 min-w-0 rounded-xl overflow-hidden border border-slate-700">
+        <div className="
+          rounded-xl overflow-hidden border border-slate-700
+          h-[46vh] md:h-auto md:flex-1
+        ">
           <Scene3D pitch={pitch} roll={roll} yaw={yaw} />
         </div>
 
-        {/* Panel lateral de controles */}
-        <div className="flex-none w-72 flex flex-col gap-4 overflow-y-auto">
+        {/* Panel de controles:
+            – Móvil:   ancho completo, desplazamiento horizontal
+            – Desktop: columna lateral fija de 288 px              */}
+        <div className="
+          md:flex-none md:w-72
+          flex flex-col md:flex-col
+          gap-3 md:gap-4
+          overflow-y-auto
+          pb-2 md:pb-0
+        ">
           <Controls
             pitch={pitch}
             roll={roll}

@@ -8,6 +8,7 @@ body {
   overflow: hidden;
 }
 
+/* ── Slider base ── */
 input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
@@ -18,6 +19,7 @@ input[type="range"] {
   cursor: pointer;
 }
 
+/* Thumb — escritorio */
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -26,5 +28,33 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   cursor: pointer;
   border: 2px solid white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Thumb — móvil / táctil: más grande para facilitar el toque */
+@media (max-width: 767px) {
+  input[type="range"] {
+    height: 8px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 26px;
+    height: 26px;
+    border: 3px solid white;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 26px;
+    height: 26px;
+    border: 3px solid white;
+  }
 }
