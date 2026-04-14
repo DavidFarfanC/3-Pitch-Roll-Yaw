@@ -54,40 +54,72 @@ export default function AirplaneModel({ pitch, roll, yaw }: AirplaneModelProps) 
 
   return (
     <group ref={groupRef}>
-      {/* ── FUSELAJE ── */}
-      <mesh castShadow>
-        <boxGeometry args={[0.26, 0.26, 2.8]} />
-        <meshStandardMaterial color="#c8cfd8" roughness={0.4} metalness={0.3} />
+      {/* ── CABEZA ── */}
+      <mesh position={[0, 1.35, 0]} castShadow>
+        <sphereGeometry args={[0.28, 16, 16]} />
+        <meshStandardMaterial color="#f5c5a3" roughness={0.6} metalness={0.0} />
       </mesh>
 
-      {/* ── CONO DE NARIZ (apunta hacia +Z) ── */}
-      <mesh position={[0, 0, 1.65]} rotation={[Math.PI / 2, 0, 0]} castShadow>
-        <coneGeometry args={[0.13, 0.5, 16]} />
-        <meshStandardMaterial color="#a0aab4" roughness={0.3} metalness={0.4} />
+      {/* ── CUELLO ── */}
+      <mesh position={[0, 1.03, 0]} castShadow>
+        <cylinderGeometry args={[0.09, 0.09, 0.18, 12]} />
+        <meshStandardMaterial color="#f5c5a3" roughness={0.6} metalness={0.0} />
       </mesh>
 
-      {/* ── ALAS PRINCIPALES ── */}
-      <mesh position={[0, -0.02, 0.15]} castShadow>
-        <boxGeometry args={[3.8, 0.055, 0.85]} />
-        <meshStandardMaterial color="#8fa3c0" roughness={0.5} metalness={0.2} />
+      {/* ── TORSO ── */}
+      <mesh position={[0, 0.48, 0]} castShadow>
+        <boxGeometry args={[0.52, 0.72, 0.28]} />
+        <meshStandardMaterial color="#3b82f6" roughness={0.5} metalness={0.1} />
       </mesh>
 
-      {/* ── ESTABILIZADOR HORIZONTAL (cola) ── */}
-      <mesh position={[0, 0, -1.25]} castShadow>
-        <boxGeometry args={[1.55, 0.05, 0.5]} />
-        <meshStandardMaterial color="#8fa3c0" roughness={0.5} metalness={0.2} />
+      {/* ── CADERA ── */}
+      <mesh position={[0, 0.06, 0]} castShadow>
+        <boxGeometry args={[0.46, 0.22, 0.26]} />
+        <meshStandardMaterial color="#1e40af" roughness={0.5} metalness={0.1} />
       </mesh>
 
-      {/* ── ALETA VERTICAL (cola) ── */}
-      <mesh position={[0, 0.33, -1.18]} castShadow>
-        <boxGeometry args={[0.055, 0.6, 0.58]} />
-        <meshStandardMaterial color="#8fa3c0" roughness={0.5} metalness={0.2} />
+      {/* ── BRAZO IZQUIERDO ── */}
+      <mesh position={[0.38, 0.46, 0]} castShadow>
+        <cylinderGeometry args={[0.08, 0.07, 0.65, 10]} />
+        <meshStandardMaterial color="#3b82f6" roughness={0.5} metalness={0.1} />
+      </mesh>
+      {/* mano izquierda */}
+      <mesh position={[0.38, 0.10, 0]} castShadow>
+        <sphereGeometry args={[0.09, 10, 10]} />
+        <meshStandardMaterial color="#f5c5a3" roughness={0.6} metalness={0.0} />
       </mesh>
 
-      {/* ── CABINA / COCKPIT ── */}
-      <mesh position={[0, 0.17, 0.9]} castShadow>
-        <boxGeometry args={[0.22, 0.18, 0.55]} />
-        <meshStandardMaterial color="#7ab3d4" roughness={0.1} metalness={0.1} transparent opacity={0.85} />
+      {/* ── BRAZO DERECHO ── */}
+      <mesh position={[-0.38, 0.46, 0]} castShadow>
+        <cylinderGeometry args={[0.08, 0.07, 0.65, 10]} />
+        <meshStandardMaterial color="#3b82f6" roughness={0.5} metalness={0.1} />
+      </mesh>
+      {/* mano derecha */}
+      <mesh position={[-0.38, 0.10, 0]} castShadow>
+        <sphereGeometry args={[0.09, 10, 10]} />
+        <meshStandardMaterial color="#f5c5a3" roughness={0.6} metalness={0.0} />
+      </mesh>
+
+      {/* ── PIERNA IZQUIERDA ── */}
+      <mesh position={[0.15, -0.52, 0]} castShadow>
+        <cylinderGeometry args={[0.1, 0.08, 0.72, 10]} />
+        <meshStandardMaterial color="#1e3a5f" roughness={0.6} metalness={0.0} />
+      </mesh>
+      {/* pie izquierdo */}
+      <mesh position={[0.15, -0.93, 0.07]} castShadow>
+        <boxGeometry args={[0.14, 0.1, 0.28]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.8} metalness={0.0} />
+      </mesh>
+
+      {/* ── PIERNA DERECHA ── */}
+      <mesh position={[-0.15, -0.52, 0]} castShadow>
+        <cylinderGeometry args={[0.1, 0.08, 0.72, 10]} />
+        <meshStandardMaterial color="#1e3a5f" roughness={0.6} metalness={0.0} />
+      </mesh>
+      {/* pie derecho */}
+      <mesh position={[-0.15, -0.93, 0.07]} castShadow>
+        <boxGeometry args={[0.14, 0.1, 0.28]} />
+        <meshStandardMaterial color="#1a1a1a" roughness={0.8} metalness={0.0} />
       </mesh>
 
       {/* ═══════════════════════════════════
