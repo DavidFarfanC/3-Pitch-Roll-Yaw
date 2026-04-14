@@ -28,13 +28,24 @@ export default function Home() {
     <main className="flex flex-col h-screen bg-white text-gray-900 overflow-hidden">
       {/* Encabezado — más compacto en móvil */}
       <header className="flex-none px-4 py-2.5 md:px-6 md:py-4 border-b border-gray-200">
-        <p className="text-[10px] md:text-xs text-gray-400 mb-0.5">De: Kamila García</p>
-        <h1 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
-          Visualizador de Pitch, Roll y Yaw
-        </h1>
-        <p className="hidden md:block text-gray-500 text-sm mt-0.5">
-          Manipula los tres ejes de rotación de un avión en tiempo real
-        </p>
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 md:gap-0">
+          <div>
+            <h1 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
+              Visualizador de Pitch, Roll y Yaw
+            </h1>
+            <p className="hidden md:block text-gray-500 text-sm mt-0.5">
+              Manipula los tres ejes de rotación de un avión en tiempo real
+            </p>
+          </div>
+          <div className="text-right text-[10px] md:text-xs text-gray-400 leading-snug">
+            <p className="font-medium text-gray-500">Prof. Rafael Miranda</p>
+            <p>Robótica Industrial — CETYS Universidad Campus Tijuana</p>
+            <p className="mt-1">
+              <span className="font-semibold text-red-500">Equipo Rojo:</span>{" "}
+              Kamila · David · Ivan · Enrique · Jorge · Jesus
+            </p>
+          </div>
+        </div>
       </header>
 
       {/* Contenido principal:

@@ -46,11 +46,10 @@ export default function AirplaneModel({ pitch, roll, yaw }: AirplaneModelProps) 
   const yawRad = (yaw * Math.PI) / 180;
 
   // Aplicar rotaciones en orden YXZ (Yaw → Pitch → Roll)
-  // Se niega pitchRad porque en Three.js la rotación +X baja el morro (+Z→-Y),
-  // mientras que en el convenio aeronáutico pitch positivo = morro arriba.
+  // que es la convención estándar en aeronáutica
   useEffect(() => {
     if (!groupRef.current) return;
-    groupRef.current.rotation.set(-pitchRad, yawRad, rollRad, "YXZ");
+    groupRef.current.rotation.set(pitchRad, yawRad, rollRad, "YXZ");
   }, [pitchRad, yawRad, rollRad]);
 
   return (
