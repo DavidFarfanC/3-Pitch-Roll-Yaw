@@ -7,8 +7,8 @@ import Controls from "@/components/Controls";
 const Scene3D = dynamic(() => import("@/components/Scene3D"), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-full flex items-center justify-center bg-slate-800 rounded-xl">
-      <p className="text-slate-400 text-sm">Cargando escena 3D...</p>
+    <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-xl">
+      <p className="text-gray-500 text-sm">Cargando escena 3D...</p>
     </div>
   ),
 });
@@ -25,14 +25,14 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-col h-screen bg-slate-900 text-white overflow-hidden">
+    <main className="flex flex-col h-screen bg-white text-gray-900 overflow-hidden">
       {/* Encabezado — más compacto en móvil */}
-      <header className="flex-none px-4 py-2.5 md:px-6 md:py-4 border-b border-slate-700">
-        <p className="text-[10px] md:text-xs text-slate-500 mb-0.5">De: Kamila García</p>
-        <h1 className="text-lg md:text-2xl font-bold tracking-tight text-white leading-tight">
+      <header className="flex-none px-4 py-2.5 md:px-6 md:py-4 border-b border-gray-200">
+        <p className="text-[10px] md:text-xs text-gray-400 mb-0.5">De: Kamila García</p>
+        <h1 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 leading-tight">
           Visualizador de Pitch, Roll y Yaw
         </h1>
-        <p className="hidden md:block text-slate-400 text-sm mt-0.5">
+        <p className="hidden md:block text-gray-500 text-sm mt-0.5">
           Manipula los tres ejes de rotación de un avión en tiempo real
         </p>
       </header>
@@ -44,7 +44,7 @@ export default function Home() {
 
         {/* Escena 3D */}
         <div className="
-          rounded-xl overflow-hidden border border-slate-700
+          rounded-xl overflow-hidden border border-gray-200
           h-[46vh] md:h-auto md:flex-1
         ">
           <Scene3D pitch={pitch} roll={roll} yaw={yaw} />
