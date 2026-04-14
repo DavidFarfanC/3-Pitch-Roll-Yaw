@@ -42,7 +42,7 @@ export default function Home() {
             <p>Robótica Industrial — CETYS Universidad Campus Tijuana</p>
             <p className="mt-1">
               <span className="font-semibold text-red-500">Equipo Rojo:</span>{" "}
-              Kamila · David · Ivan · Enrique · Jorge · Jesus
+              Kamila · Enrique · Jorge · Jesus
             </p>
           </div>
         </div>
